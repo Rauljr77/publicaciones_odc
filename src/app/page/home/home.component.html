@@ -1,0 +1,25 @@
+<h1 class="ff-roboto fw-300 text-blue">Resultados</h1>
+@for (item of publicationList; track $index) {
+  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template pTemplate="header">
+        <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+    </ng-template>
+    @if (item.title) {
+      <ng-template pTemplate="title">{{item.title}}</ng-template>
+    }
+    <ng-template pTemplate="subtitle"> Categoría: {{item.mJODCCategoria[0].name}} </ng-template>
+    @if (item.mjDescripcion) {
+      <p class="ff-roboto fw-300">{{item.mjDescripcion}}</p>
+    }
+    <ng-template pTemplate="footer">
+        <div class="flex gap-4 mt-1">
+          <p>Año: {{item.mjAnio}}</p>
+          <p>Mes: {{item.mjMes}}</p>
+        </div>
+    </ng-template>
+</p-card>
+
+
+
+
+}

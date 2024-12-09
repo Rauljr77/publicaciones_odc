@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+.text-blue {
+    color: blue;
+}
+
+.ff-roboto {
+    font-family: 'Roboto';
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.p-card {
+    font-family: 'Roboto';
+    .p-card-title {
+        font-family: inherit;
+        font-weight: 400;
+    }
+    .p-card-subtitle {
+        font-family: inherit;
+        font-weight: 300;
+    }
+}
