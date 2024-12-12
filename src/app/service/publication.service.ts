@@ -1,8 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environment/environment';
 import { Observable } from 'rxjs';
 import { IResult, IPublication } from '../interface/response';
+import { getBasicHttpOptions } from '../utils/service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,6 @@ export class PublicationService {
   constructor(private readonly http: HttpClient) {}
 
   getAllPublication(token: string): Observable<IResult<IPublication[]>> {
-    const reqHeader: HttpHeaders = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    });
-    return this.http.get<IResult<IPublication[]>>(`${this.apiBaseUrl}${this.apiUrl}`, { headers: reqHeader });
+    return this.http.get<IResult<IPublication[]>>(`${this.apiBaseUrl}${this.apiUrl}/GetAllPublicaciones`, { headers: getBasicHttpOptions(token) });
   }
 }

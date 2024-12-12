@@ -4,9 +4,7 @@ import { PublicationService } from '../../service/publication.service';
 import { IPublication, IResponseToken, IResult } from '../../interface/response';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { GET_ALL_PUBLICATION } from '../../constant/publication';
-import { CardModule } from 'primeng/card';
+import { CardComponent } from '../../component/card/card.component';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +12,7 @@ import { CardModule } from 'primeng/card';
   imports: [
     CommonModule, 
     FormsModule,
-    HttpClientModule,
-    CardModule
+    CardComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -32,12 +29,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.initList();
   }
-  
-  /* initList(): void {
-    setTimeout(() => {
-      this.publicationList = GET_ALL_PUBLICATION.data;
-    }, 1000)
-  } */
   
   initList(): void {
     this.tokenService.getToken().subscribe((dataToken: IResponseToken) => {

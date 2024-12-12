@@ -1,25 +1,26 @@
-<h1 class="ff-roboto fw-300 text-blue">Resultados</h1>
+<div class="grid">
+  <div class="col-5">
+  </div>
+  <div class="col-7 bg-green-400">
+    <div class="p-3 border-round-sm font-bold text-3xl">
+      <h2 class="rext-blue-500">Resultados</h2>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-5">
+    
+  </div>
+  <div class="col-7">
+    <div class="text-center p-3 border-round-sm font-bold text-3xl">
+
+    </div>
+  </div>
+</div>
+
+
+<h1 class="ff-roboto fw-300 text-blue-500">Resultados</h1>
 @for (item of publicationList; track $index) {
-  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
-    <ng-template pTemplate="header">
-        <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-    </ng-template>
-    @if (item.title) {
-      <ng-template pTemplate="title">{{item.title}}</ng-template>
-    }
-    <ng-template pTemplate="subtitle"> Categoría: {{item.mJODCCategoria[0].name}} </ng-template>
-    @if (item.mjDescripcion) {
-      <p class="ff-roboto fw-300">{{item.mjDescripcion}}</p>
-    }
-    <ng-template pTemplate="footer">
-        <div class="flex gap-4 mt-1">
-          <p>Año: {{item.mjAnio}}</p>
-          <p>Mes: {{item.mjMes}}</p>
-        </div>
-    </ng-template>
-</p-card>
-
-
-
-
+  <card [publication]="item"/>
 }
